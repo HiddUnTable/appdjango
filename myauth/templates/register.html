@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+
+<link  href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" 
+       rel="stylesheet">
+</head>
+<body class="bg-dark">
+        <div class="container mt-5">
+            <h2 class="text-center text-light mb-4">Registration</h2>
+            <form action="{% url 'register_page' %}" method ="post" class="w-50 mx-auto">
+                {% csrf_token %}
+                
+                <div class="mb-3">
+                    <label for="username" class="form-label text-light">Username:</label>
+                    <input type="text" name="username" class="form-control"required>
+                    <br><br>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="email" class="form-label text-light">Email:</label>
+                    <input type="email" name="email" class="form-control"required>
+                    <br><br>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="password1" class="form-label text-light">Password:</label>
+                    <input type="password" name="password1" class="form-control"required>
+                    <br><br>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="password2" class="form-label text-light">Confirm password:</label>
+                    <input type="password" name="password2" class="form-control"required>
+                    <br><br>
+                </div>
+        
+                <button type="submit" class="button btn btn-success btn-block">Submit</button>
+                <br><br>
+                <a href ="{% url 'home' %}" class="button btn btn-primary">Back</a>
+           
+            </form>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
+
+
+{% comment %} {% render_field form.username type ="hidden" class="form-control" \ 
+        value=user.username|add:"something"%} {% endcomment %}
+
+{% comment %} {%render_field form.email type="hidden" class="form-control" \ 
+        value=user.email|add:"something"%} {% endcomment %}
+
+{% comment %} {%render_field form.password type="hidden" class="form-control" \ 
+        value=user.password|add:"something"%} {% endcomment %}
+{% comment %} {%render_field form.confirm_password type="hidden" class="form-control" \ 
+        value=user.confirm_password|add:"something"%} {% endcomment %}

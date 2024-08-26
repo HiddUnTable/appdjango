@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width = device-width, initial-scale=1.0">
+        <title>View Employee</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" 
+            rel="stylesheet">
+    </head>
+    <body class="bg-dark">
+        <div class="container mt-5">
+            <h2 class="text-center text-light mb-4">Employee Details</h2>
+                <div 
+                    class = "employee-detail"
+                    style = "color:white;">
+                    <span>Employee Number:</span> {{employees.nip}}
+                </div>
+                
+                <div
+                    class = "employee-detail"
+                    style = "color:white;">
+                    <span>First Name: </span>{{employees.first_name}}
+                </div>
+                
+                <div 
+                    class = "employee-detail"
+                    style = "color:white;">
+                    <span> Last Name: </span>{{employees.last_name}}
+                </div>
+                
+                <div 
+                    class = "employee-detail"
+                    style = "color:white;">
+                    <span>Gender: </span>{{employees.gender}}
+                </div>
+    
+                <div
+                    class="employee-detail"
+                    style = "color:white;">
+                    <span>Birth Place: </span>{{employees.birth_place}}
+                </div>
+    
+                <div
+                    class="employee-detail"
+                    style = "color:white;">
+                    <span>Birth Date: </span>{{employees.birth_date}}
+                </div>
+                
+                <div
+                    class="employee-detail"
+                    style = "color:white;">
+                    <span>Address: </span>{{employees.address}}
+                 </div>
+    
+                <div
+                    class="employee-detail"
+                    style = "color:white;">
+                    <span>Phone Number: </span>{{employees.phone_number}}
+                </div>
+    
+                <div
+                    class="employee-detail"
+                    style = "color:white;">
+                    <span>Email: </span>{{employees.email}}
+                </div>
+    
+                <div 
+                    class="employee-detail"
+                    style = "color:white;">
+                    <span>Date Joined: </span>{{employees.date_joined}}
+                </div>
+                    
+                <div class="actions text-center mt-4">
+                    <a href ="{% url 'employee_edit' employees.nip %}" class="button btn btn-primary text-light">Edit</a>
+                    <a href ="{% url 'employee_delete' employees.nip %}" class="button btn btn-primary text-light">Delete</a>
+                    <a href ="{% url 'employee_list' %}" class="button btn btn-primary text-light">Back</a>
+                </div>
+            </form>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
